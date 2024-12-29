@@ -1,0 +1,7 @@
+{
+  "id": "disable-liblzma",
+  "type": "configuration",
+  "language": "CMake",
+  "option": "-DLIBXML2_WITH_LZMA=OFF",
+  "description": "Disable LibLZMA support during the CMake configuration since it is not enabled VxWorks."
+}

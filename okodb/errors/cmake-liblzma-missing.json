@@ -1,0 +1,15 @@
+{
+  "id": "cmake-liblzma-missing",
+  "error_message": "Could NOT find LibLZMA (missing: LIBLZMA_LIBRARY LIBLZMA_INCLUDE_DIR LIBLZMA_HAS_AUTO_DECODER LIBLZMA_HAS_EASY_ENCODER LIBLZMA_HAS_LZMA_PRESET)",
+  "description": "CMake provides an option LIBXML2_WITH_LZMA to add LIBLZMA support, which is set to ON by default, but liblzma is supported, but not included by VxWorks.",
+  "command": "cmake .. -DCMAKE_TOOLCHAIN_FILE=$WIND_CC_SYSROOT/mk/toolchain.cmake -DPython_EXECUTABLE=python3.9 -DPython_ROOT_DIR=/usr/3pp/develop/usr/ -DLIBXML2_WITH_ICONV=OFF",
+  "category": "dependency_error",
+  "repository_id": "libxml2-v2.12.6",
+  "sdk_id": "wrsdk-vxworks7-qemu-1.14",
+  "fix_id": "disable-liblzma",
+  "language": "CMake",
+  "url": "https://cmake.org/cmake/help/latest/module/FindLibLZMA.html",
+  "file": "CMakeLists.txt",
+  "line": 111,
+  "line_content": "find_package(LibLZMA REQUIRED)"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "cmake-iconv-missing",
+  "error_message": "Could NOT find Iconv (missing: Iconv_LIBRARY Iconv_INCLUDE_DIR)",
+  "description": "CMake provides an option LIBXML2_WITH_ICONV to add ICONV support, which is set to ON by default, but Iconv is not supported by VxWorks.",
+  "command": "cmake .. -DCMAKE_TOOLCHAIN_FILE=$WIND_CC_SYSROOT/mk/toolchain.cmake -DPython_EXECUTABLE=$WIND_SDK_HOME/vxsdk/host/x86_64-linux/bin/python3.9 -DPython_ROOT_DIR=/usr/3pp/develop/usr/",
+  "category": "dependency_error",
+  "repository_id": "libxml2-v2.12.6",
+  "sdk_id": "wrsdk-vxworks7-qemu-1.14",
+  "fix_id": "disable-iconv",
+  "language": "CMake",
+  "url": "https://cmake.org/cmake/help/latest/module/FindIconv.html",
+  "file": "CMakeLists.txt",
+  "line": 103,
+  "line_content": "find_package(Iconv REQUIRED)"
+}

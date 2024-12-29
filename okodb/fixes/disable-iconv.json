@@ -1,0 +1,7 @@
+{
+  "id": "disable-iconv",
+  "type": "configuration",
+  "language": "CMake",
+  "option": "-DLIBXML2_WITH_ICONV=OFF",
+  "description": "Disable Iconv support during the CMake configuration since it is not available in VxWorks."
+}
