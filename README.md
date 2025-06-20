@@ -128,7 +128,7 @@ Example output:
 OkodB is designed for easy extensibility:
 
 1. Add new errors, fixes, OS descriptions, or repositories as JSON files in their respective directories.
-2. Run create_okodb.py to regenerate the database.
+2. Run `create_okodb.py` to regenerate the database.
 
 ## Contributing
 
