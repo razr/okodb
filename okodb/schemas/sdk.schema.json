@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/sdk.schema.json",
+  "title": "SDK Record",
+  "description": "Schema for an SDK entry in OkodB",
+  "type": "object",
+  "required": ["id", "version", "os_name", "os_release", "url"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9._-]+$",
+      "description": "Unique identifier for the SDK"
+    },
+    "version": {
+      "type": "string",
+      "description": "SDK version"
+    },
+    "os_name": {
+      "type": "string",
+      "description": "Name of the operating system"
+    },
+    "os_release": {
+      "type": "string",
+      "description": "OS release number"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Download URL for the SDK"
+    },
+    "description": {
+      "type": "string",
+      "description": "Optional description of the SDK"
+    }
+  },
+  "additionalProperties": false
+}
