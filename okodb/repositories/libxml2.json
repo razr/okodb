@@ -2,6 +2,7 @@
   "id": "libxml2-v2.12.6",
   "name": "libxml2",
   "type": "git",
+  "build_system": "CMake",
   "repository": {
     "url": "https://github.com/GNOME/libxml2.git",
     "version": "v2.12.6"

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/repository.schema.json",
+  "title": "Repository Record",
+  "description": "Schema for a software package entry used in OkodB or a similar build database.",
+  "type": "object",
+  "required": ["id", "name", "type", "build_system", "repository"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9._-]+$",
+      "description": "Unique identifier for the package (e.g., 'libxml2-v2.12.6')."
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable package name (e.g., 'libxml2')."
+    },
+    "type": {
+      "type": "string",
+      "enum": ["git", "tarball"],
+      "description": "Type of package source."
+    },
+    "build_system": {
+      "type": "string",
+      "enum": ["CMake", "Autotools", "Makefile"],
+      "description": "Build system used by the package."
+    },
+    "repository": {
+      "type": "object",
+      "required": ["url", "version"],
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the source repository or tarball."
+        },
+        "version": {
+          "type": "string",
+          "description": "Version tag, branch, or commit hash."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
+
