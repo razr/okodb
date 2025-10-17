@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/error.schema.json",
+  "title": "CMake Error Record",
+  "description": "Schema for an error record in OkodB",
+  "type": "object",
+  "required": [
+    "id",
+    "error_message",
+    "description",
+    "command",
+    "category",
+    "repository_id",
+    "sdk_id",
+    "fix_id",
+    "build_system",
+    "language",
+    "file",
+    "line",
+    "line_content",
+    "url"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9._-]+$",
+      "description": "Unique identifier for the error record (e.g., 'cmake-iconv-missing')"
+    },
+    "error_message": {
+      "type": "string",
+      "description": "Exact error message produced by CMake or the build system"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed explanation of why the error occurs"
+    },
+    "command": {
+      "type": "string",
+      "description": "CMake or build command that reproduces the error"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["dependency_error", "missing_header", "missing_function", "build_error", "other"],
+      "description": "High-level classification of the error type"
+    },
+    "repository_id": {
+      "type": "string",
+      "description": "Identifier of the repository/package where the error occurs (matches repositories JSON)"
+    },
+    "sdk_id": {
+      "type": "string",
+      "description": "Identifier of the VxWorks SDK used to reproduce this error"
+    },
+    "fix_id": {
+      "type": "string",
+      "description": "Identifier of the corresponding fix record"
+    },
+    "build_system": {
+      "type": "string",
+      "description": "Build system used (e.g., 'CMake')"
+    },
+    "language": {
+      "type": "string",
+      "description": "Programming language of the source files affected by this error (e.g., 'C', 'C++')"
+    },
+    "file": {
+      "type": "string",
+      "description": "File where the error occurs (relative to the repository root)"
+    },
+    "line": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Line number in the file where the error occurs"
+    },
+    "line_content": {
+      "type": "string",
+      "description": "Content of the line that triggers or relates to the error"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Link to relevant documentation or reference for the error"
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["low", "medium", "high"],
+      "description": "Optional severity level of the error; indicates how critical it is"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional field for any additional remarks or hints about the error"
+    }
+  },
+  "additionalProperties": false
+}
