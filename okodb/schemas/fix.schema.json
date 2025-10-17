@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/fix.schema.json",
+  "title": "CMake Fix Record",
+  "description": "Schema for a configuration or patch fix in OkodB",
+  "type": "object",
+  "required": [
+    "id",
+    "type",
+    "language",
+    "build_system",
+    "option",
+    "description"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9._-]+$",
+      "description": "Unique identifier for the fix (e.g., 'disable-iconv')"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["configuration", "patch", "manual", "other"],
+      "description": "Type of fix"
+    },
+    "language": {
+      "type": "string",
+      "description": "Programming language or system of the fix (e.g., 'CMake')"
+    },
+    "build_system": {
+      "type": "string",
+      "description": "Build system for which this fix is applicable (e.g., 'CMake')"
+    },
+    "option": {
+      "type": "string",
+      "description": "Configuration option, patch command, or instruction to apply the fix"
+    },
+    "description": {
+      "type": "string",
+      "description": "Human-readable explanation of the fix and why it is needed"
+    },
+    "repository_id": {
+      "type": "string",
+      "description": "Optional: ID of the repository/package this fix applies to"
+    },
+    "sdk_id": {
+      "type": "string",
+      "description": "Optional: ID of the SDK this fix applies to"
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["low", "medium", "high"],
+      "description": "Optional: severity or importance of the fix"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional additional notes about the fix"
+    }
+  },
+  "additionalProperties": false
+}
