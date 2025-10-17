@@ -1,0 +1,8 @@
+# Include all JSON data files in the okodb package
+recursive-include okodb *.json
+
+# Include Python scripts
+recursive-include scripts *.py
+
+# Include README
+include README.md
