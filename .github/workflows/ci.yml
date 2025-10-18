@@ -104,6 +104,9 @@ jobs:
       - name: Install OkodB package
         run: pip install dist/*.whl
 
+      - name: Create OkodB JSON
+        run: python scripts/createdb.py
+
       - name: Run example script
         run: python examples/hello_okodb.py
 
